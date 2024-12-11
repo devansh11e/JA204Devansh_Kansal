@@ -1,0 +1,36 @@
+<h1>Add Player</h1>
+<form #playerForm="ngForm" class="container col-md-5" (ngSubmit)="addPlayer(playerForm.value)">
+  <div style="color:brown;">
+    Player Name: <input type="text" class="form-control" required name="playerName" ngModel #playerNameControl="ngModel">
+    <span style="color:red" *ngIf="playerNameControl.touched && playerNameControl.invalid">Player Name is Mandatory</span>
+  </div>
+  <div style="color:brown;">
+    Jersey Number: <input type="number" class="form-control" required name="jerseyNumber" ngModel #jerseyNumberControl="ngModel">
+    <span style="color:red" *ngIf="jerseyNumberControl.touched && jerseyNumberControl.invalid">Jersey Number is Mandatory</span>
+  </div>
+  <div style="color:brown;">
+    Role: <input type="text" class="form-control" required name="role" ngModel #roleControl="ngModel">
+    <span style="color:red" *ngIf="roleControl.touched && roleControl.invalid">Role is Mandatory</span>
+  </div>
+  <div style="color:brown;">
+    Total Matches: <input type="number" class="form-control" required name="totalMatches" ngModel #totalMatchesControl="ngModel">
+    <span style="color:red" *ngIf="totalMatchesControl.touched && totalMatchesControl.invalid">Total Matches are Mandatory</span>
+  </div>
+  <div style="color:brown;">
+    Team Name: <input type="text" class="form-control" required name="teamName" ngModel #teamNameControl="ngModel">
+    <span style="color:red" *ngIf="teamNameControl.touched && teamNameControl.invalid">Team Name is Mandatory</span>
+  </div>
+  <div style="color:brown;">
+    Country: <input type="text" class="form-control" required name="country" ngModel #countryControl="ngModel">
+    <span style="color:red" *ngIf="countryControl.touched && countryControl.invalid">Country is Mandatory</span>
+  </div>
+  <div style="color:brown;">
+    State: <input type="text" class="form-control" required name="state" ngModel #stateControl="ngModel">
+    <span style="color:red" *ngIf="stateControl.touched && stateControl.invalid">State is Mandatory</span>
+  </div>
+  <div style="color:brown;">
+    Description: <textarea class="form-control" required name="description" ngModel #descriptionControl="ngModel"></textarea>
+    <span style="color:red" *ngIf="descriptionControl.touched && descriptionControl.invalid">Description is Mandatory</span>
+  </div>
+  <button type="submit" class="btn btn-success" style="background-color: green;" [disabled]="playerForm.invalid">Submit</button>
+</form>
